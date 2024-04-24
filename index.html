@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <!-- Include Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Additional Styles */
+      .todo-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200 min-h-screen flex items-center justify-center">
+    <div class="bg-white rounded shadow p-6 todo-container">
+      <h1 class="text-2xl font-bold mb-4">Todo List</h1>
+      <!-- Todo Input -->
+      <div class="flex mb-4">
+        <input
+          id="todoInput"
+          type="text"
+          class="w-full px-4 py-2 rounded-l border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white focus:outline-none"
+          placeholder="Enter your todo..."
+        />
+        <button
+          id="addTodo"
+          class="bg-blue-500 text-white px-4 rounded-r border border-blue-500 border-l-0 border-t hover:bg-blue-600 focus:outline-none"
+        >
+          Add
+        </button>
+      </div>
+      <!-- Todo List -->
+      <ul id="todoList">
+        <!-- Todo items will be added dynamically here -->
+        <!-- <li id="${id}" class="flex items-center justify-between mb-2">
+          <label class="inline-flex items-center">
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-blue-500"
+            />
+            <span class="ml-2 text-gray-800">${text}</span>
+          </label>
+          <button class="text-red-500 hover:text-red-600 focus:outline-none">
+            X
+          </button>
+        </li> -->
+      </ul>
+    </div>
+
+    <!-- <script>
+      // Generate unique ID for todos
+      function generateId() {
+        return "_" + Math.random().toString(36).substr(2, 9);
+      }
+
+      // Function to create todo item
+      function createTodoItem(id, text) {
+        return `
+            <li id="${id}" class="flex items-center justify-between mb-2">
+                <label class="inline-flex items-center">
+                    <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500">
+                    <span class="ml-2 text-gray-800">${text}</span>
+                </label>
+                <button class="text-red-500 hover:text-red-600 focus:outline-none">X</button>
+            </li>
+            `;
+      }
+
+      // Function to add todo item to the list
+      function addTodoItem() {
+        const todoInput = document.getElementById("todoInput");
+        const todoList = document.getElementById("todoList");
+
+        if (todoInput.value.trim() === "") return;
+
+        const id = generateId();
+        const text = todoInput.value.trim();
+        const todoItem = createTodoItem(id, text);
+
+        todoList.insertAdjacentHTML("beforeend", todoItem);
+        todoInput.value = "";
+      }
+
+      // Event listener for adding todo item
+      document.getElementById("addTodo").addEventListener("click", addTodoItem);
+
+      // Event delegation for deleting todo item
+      document
+        .getElementById("todoList")
+        .addEventListener("click", function (event) {
+          if (event.target.tagName === "BUTTON") {
+            const todoItem = event.target.closest("li");
+            todoItem.remove();
+          }
+        });
+    </script> -->
+    <script src="./index.js"></script>
+  </body>
+</html>
